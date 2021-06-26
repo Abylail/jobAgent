@@ -1,5 +1,5 @@
 <template>
-  <svg>
+  <svg @click="$emit('click')">
     <use
         :xlink:href="require('@/assets/sprite.svg') + `#${$slots.default[0].text}`"
     ></use>
@@ -11,6 +11,8 @@
       &-size-#{$s} {
         width: #{$s}px;
         height: #{$s}px;
+
+        min-width: #{$s}px;
       }
     }
   }

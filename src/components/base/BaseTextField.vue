@@ -1,19 +1,25 @@
 <template>
   <div class="text-field">
+    <BaseIcon v-if="magnifier" class="text-field__magnifier ic-size-20">magnifier</BaseIcon>
     <input
       class="text-field__input"
-      :class="{'padding-30': searchIcon}"
       :placeholder="placeholder"
       :type="type"
       :value="value"
       @input="inputHandle"
     />
+    <BaseIcon v-if="needClear" class="text-field__clear ic-size-20" @click="clear">cross</BaseIcon>
   </div>
 </template>
 
 <script>
+import BaseIcon from "@/components/base/BaseIcon";
+
 export default {
   name: "BaseTextField",
+  components:{
+    BaseIcon
+  },
   props: {
     placeholder: {
       type: String,
@@ -31,18 +37,23 @@ export default {
       type: Boolean,
       default: false
     },
-    searchIcon: {
+    magnifier: {
       type: Boolean,
       default: false
     }
   },
   methods: {
     clear() {
+      console.log("clear");
       this.$emit('input', "");
     },
     inputHandle(e) {
-      console.log(e)
       this.$emit('input', e.target.value);
+    }
+  },
+  computed: {
+    needClear() {
+      return this.clearable && !!this.value;
     }
   }
 }
@@ -63,6 +74,16 @@ export default {
       height: 35px;
       outline: none !important;
       width: 100%;
+      padding: 0 8px;
+    }
+
+    &__magnifier {
+      margin-left: 8px;
+    }
+
+    &__clear {
+      margin-right: 8px;
+      cursor: pointer;
     }
 
   }
