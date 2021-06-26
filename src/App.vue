@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <BaseLayout>
+      <div class="head">
+        <h2 class="head__title">JOB SEARCH</h2>
+        <div class="head__tools">
+          <BaseTextField
+            v-model="searchText"
+          />
+        </div>
+      </div>
+    </BaseLayout>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BaseLayout from "@/layouts/BaseLayout";
+import BaseTextField from "@/components/base/BaseTextField";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BaseLayout,
+    BaseTextField
+  },
+  data() {
+    return {
+      searchText: ""
+    }
   }
 }
 </script>
+<style lang="scss">
+  body {
+    margin: 0;
+  }
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .head {
+    padding: 8px 0;
+
+    &__title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      /* identical to box height */
+      text-transform: uppercase;
+      color: #636363;
+    }
+
+  }
+
 </style>

@@ -1,0 +1,7 @@
+<svg width="0" height="0" class="hidden">
+    <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" id="success-icon">
+      <circle cx="30" cy="30" r="30" fill="#A1EDB3"></circle>
+      <circle cx="30" cy="30" r="20" stroke="#00B92D"></circle>
+      <path d="M18.333 30.926l7.18 7.407 16.154-16.666" stroke="#00B92D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+</svg>
