@@ -33,13 +33,14 @@
 
       <!--  LIST    -->
       <BaseLoader v-if="isLoading"/>
-      <div class="list" v-else>
+      <div class="list" v-else-if="!!readyMeat.length">
         <JobCard
           v-for="(job, i) in readyMeat"
           :key="i"
           :data="job"
         />
       </div>
+      <span v-else>No data</span>
 
     </BaseLayout>
   </div>
