@@ -113,6 +113,7 @@ export default {
       line-height: 14px;
       text-transform: uppercase;
       margin: 0 0 8px 0;
+      height: 30px;
     }
 
 
