@@ -14,7 +14,7 @@
             clearable
           />
           <button class="tools__filter" :class="{'tools__filter--opened': filterOpened}" @click="filterOpened = !filterOpened">
-            <BaseIcon class="ic-size-15">filter</BaseIcon>
+            <BaseIcon class="ic-size-15">{{ filterOpened ? "cross" : "filter"  }}</BaseIcon>
           </button>
         </div>
         <div class="tools__container">
