@@ -7,7 +7,7 @@
 </template>
 <style lang="scss" scoped>
   .ic {
-    @for $s from 1 through 1000 {
+    @for $s from 1 through 100 {
       &-size-#{$s} {
         width: #{$s}px;
         height: #{$s}px;

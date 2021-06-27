@@ -8,7 +8,7 @@
       :value="value"
       @input="inputHandle"
     />
-    <BaseIcon v-if="needClear" class="text-field__clear ic-size-20" @click="clear">cross</BaseIcon>
+    <BaseIcon v-if="needClear" class="text-field__clear ic-size-12" @click="clear">cross</BaseIcon>
   </div>
 </template>
 
@@ -44,7 +44,6 @@ export default {
   },
   methods: {
     clear() {
-      console.log("clear");
       this.$emit('input', "");
     },
     inputHandle(e) {
